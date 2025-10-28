@@ -1,0 +1,45 @@
+.grid{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr) ;
+    grid-template-rows: repeat(6, 1fr);
+    gap: 10px 10px;
+
+}
+
+.amarillo div{
+  height: 100px;
+  width: 100px; 
+  background-color:yellow;
+  grid-column-start: auto;
+  width: 100px;
+  height: 100px;
+
+}
+
+.verde div{ /* mal */
+  height: 100px;
+  width: 100%; 
+  background-color:green;
+  grid-column: 2 span;
+}
+
+.aqua div{
+  height: 100px;
+  width: 100px; 
+  background-color:aquamarine;
+}
+.azul div{
+  height: 100px;
+  width: 100px; 
+  background-color:blue;
+}
+.morado div{
+  height: 100px;
+  width: 100px; 
+  background-color:purple;
+}
+.magenta div{
+  height: 100px;
+  width: 100px; 
+  background-color:magenta;
+}

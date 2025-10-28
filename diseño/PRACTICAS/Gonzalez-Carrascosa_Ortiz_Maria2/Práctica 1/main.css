@@ -1,0 +1,113 @@
+.title{
+    text-align: center;
+    margin-top: 10;
+    margin:15;
+}
+.container{
+    font-family: 'Courier New', Courier, monospace;
+    width: 100vw;
+    height:auto;
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 300px auto 500px 100px;
+    grid-template-areas: 
+    "header header"
+    "contenido sidebar "
+    "posts posts"
+    "footer footer";
+    
+}
+
+.header{
+    grid-area: header;
+    background-color: rgb(248, 54, 86);
+    color:white;
+    margin: 10px;
+    padding:30px;
+}
+.header h1{
+    font-size: 50px;
+    font-weight: bold;
+    margin:0;
+    margin-top: 5px;
+    padding:10px;
+
+}
+.content{
+    grid-area:contenido;
+    display:grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    padding:20px;
+    border: 1px solid rgb(235, 91, 115);
+
+}
+.article{
+    text-align: left;
+    padding: 25px;
+    margin:10px;
+    background-color: pink;
+    color:black;
+}
+
+.sidebar{
+    grid-area:sidebar;
+    display:grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    background-color: rgb(247, 151, 167);
+    margin: 10px;
+}
+.sidebar div{
+    padding:70px;
+}
+.sidebar div img{
+    margin-left:50px;
+    width: 500px;
+}
+.posts{
+    grid-area: posts;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr;
+    margin:0;
+    padding:40px;
+}
+.related-post{
+    display:grid;
+    justify-self: stretch;
+    margin:30px;
+    background-color: pink;
+}
+.related-post img{
+    width: 300px;
+    margin:30px;
+}
+.related-post p{
+    padding:0;
+    margin:30px;
+}
+.footer{
+    grid-area:footer;
+    background-color: rgb(247, 151, 167);
+}
+
+@media (width<800) {
+    .container{
+    grid-template-rows: 1fr 2fr 3fr 3fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "header"
+    "contenido"
+    "sidebar"
+    "posts"
+    "footer";
+    }
+
+    /*esto no lo he hecho en el exam: */
+    .sidebar{
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+
+    }
+}

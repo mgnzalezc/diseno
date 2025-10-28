@@ -1,0 +1,68 @@
+.contenedor{
+    display:grid;
+    width:90vw;
+    height:90vh;
+    margin:10px;
+    grid-template-rows:1fr repeat(3,2fr) 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas:
+    "n1 n1 n1"
+    "n2 . n4"
+    "n2 . ."
+    "n2 . n5"
+    "n3 . n6";
+
+}
+.header{
+    grid-area:n1; background-color: orangered;
+    width:100%;
+    height:100%;
+    text-align: end;
+    
+}
+.links{
+    padding:30px;
+}
+.beige{
+    grid-area: n2; background-color: orange;
+    width:100%;
+    height:100%;
+}
+.naranja{
+    grid-area: n3; background-color: tomato;
+    width:100%;
+    height:100%;
+}
+.rojo{
+    grid-area: n4; 
+    background-color: rgba(216, 34, 34, 0.911);
+    width:100%;
+    height:100%;
+}
+.morado{
+    grid-area: n5; background-color: blue;
+    width:100%;
+    height:100%;
+}
+.amarillo{
+    grid-area: n6; background-color: yellow;
+    width:100%;
+    height:100%;
+}
+
+@media (max-width: 600px) {
+    .contenedor{
+        display:grid;
+        width:90vw;
+        height:90vh;
+        margin:10px;
+        grid-template-rows: 0.5fr repeat(3,2fr) 0.5fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "n1 n1"
+        "n2 n2"
+        ". ."
+        "n4 n5"
+        "n3 n6";
+    }
+}

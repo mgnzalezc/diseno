@@ -1,0 +1,54 @@
+.contenedor{
+    display:grid;
+    width:90vw;
+    height:90vh;
+    justify-self: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-rows:repeat(4,25%);
+    grid-template-columns: 20% 60% 20%;
+    grid-template-areas:"n1 . ." 
+                        "n1 n2 ." 
+                        ". n4 n3" 
+                        ". . n3";
+    
+}
+.foto{
+    grid-area:n1;
+}
+.titulo{
+    grid-area:n2; 
+    background-color: aqua;
+}
+.n3{
+    grid-area:n3;
+}
+.n3 img{
+    height:100px;
+}
+.tablero{
+    grid-area:n4;
+    background-color: red;
+    justify-self: stretch;
+    align-self: stretch;
+}
+.negro{
+    width: 50px; 
+    height: 50px; 
+    background-color: black;
+    align-self: center;
+    justify-self: center;
+}
+
+@media (max-width:600px) {
+    .contenedor{
+        grid-template-rows: 1fr;
+        grid-template-columns: repeat(2, 1fr) 5fr 1fr;
+        grid-template-areas:
+        "n1" 
+        "n2" 
+        "n4" 
+        "n3";
+    }
+    
+}

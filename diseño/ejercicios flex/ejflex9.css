@@ -1,0 +1,32 @@
+.nums{
+    display:flex;
+    color: white;
+    text-align: center;
+    
+}
+
+.d1, .d2, .d3, .d4, .d5, .d6, .d7, .d8, .d9, .d10{
+    height: 20px;
+    padding:5px;
+}
+
+.d1{
+    background-color: green;
+}
+.d2{
+    background-color: rgb(65, 125, 136);
+    flex-grow: 1;
+}
+.d3{
+    background-color: rgb(151, 15, 163);
+}
+.d4{
+    background-color: rgb(22, 4, 88);
+}
+.d5{
+    background-color: rgb(197, 179, 20);
+    flex-grow: 2;
+}
+.d6{
+    background-color: rgb(216, 154, 20); 
+}

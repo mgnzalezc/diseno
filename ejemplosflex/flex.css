@@ -1,0 +1,24 @@
+
+ul{
+    display:flex;
+    justify-content: space-between;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    border: solid white 2pt;
+    background-color: rgb(80, 183, 224);
+    padding: 10px;
+    text-align: left;
+    flex-grow: 1; /*maybe tb se puede con margin y padding*/
+}
+
+a{
+    text-decoration: none;
+    color:black;
+}
+    
+
+

@@ -1,0 +1,352 @@
+
+/* ESTILOS */
+
+.contenedor {
+  width: 1000px;
+  height:auto;
+  margin: auto;
+  font-family: "Open Sans", sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 500px 300px 400px auto 300px 100px;
+  grid-template-areas:
+    "recienHecho recienHecho"
+    "brunch celebra"
+    "ven ven"
+    "cuatro cuatro"
+    "contacta sabes"
+    "footer footer";
+  text-align: center;
+}
+
+:root {
+  --rojo: #d03b40;
+  --beige: #ded6c0;
+  --blanco: #f5f0ed;
+  --gris: #241d1b;
+  --negro: #251d1b;
+  --t-claro: #f5f0ed;
+  --t-oscuro: #3c3c3b;
+
+  /* TAMAÑOS */
+  --n1: 44px;
+  --n2: 28px;
+  --n3: 24px;
+  --t: 16px;
+  --boton: 14px;
+
+  --n1m: 30px;
+  --n2m: 24px;
+  --n3m: 24px;
+  --tm: 16px;
+  --botonm: 14px;
+}
+
+/*colores y textos*/
+ol,ul {
+  list-style: none;
+}
+.icono {
+  background-color: var(--rojo);
+}
+
+.barra {
+  background-color: var(--beige);
+  border-radius: 50px;
+}
+.brunch,
+.dondeEstamos {
+  background-color: var(--rojo);
+}
+
+.celebra,
+.contacta {
+  background-color: var(--beige);
+}
+
+.texto {
+  color: var(--blanco);
+  font-size: 16px;
+  text-align: center;
+}
+.cuatro {
+  background-color: var(--blanco);
+}
+.n2 {
+  font-size: var(--n2);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--blanco);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.span-red {
+  color: var(--rojo);
+}
+.item1, .item2, .item3, .item4, .item5 {
+  color: var(--blanco);
+  font-size: var(--t);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.n1 {
+  font-size: var(--n1);
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--blanco);
+  text-align: center;
+}
+
+.img {
+  background-size: contain;
+}
+
+.texto-card {
+  color: var(--gris);
+  text-align: left;
+}
+
+.texto-card-titulo {
+  font-weight: 800;
+  font-size: 24px;
+}
+.contacta .n2 {
+  color: var(--rojo);
+}
+
+.contacta .texto {
+  color: var(--rojo);
+}
+
+.dondeEstamos .n2,
+.dondeEstamos .texto {
+  color: var(--beige);
+}
+
+.contacta .texto {
+  margin-top: 23px;
+}
+
+footer {
+  background-color: var(--negro);
+  text-align: left;
+  padding: 20px;
+}
+.recienHecho {
+  background-image: url(Img/Fondo1_2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  height: 100vh;
+  overflow: hidden;
+}
+.ven {
+  background-image: url(Img/Fondo2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 19%;
+}
+
+.boton {
+  background-color: transparent;
+  border: 2px solid var(--blanco);
+  color: var(--blanco);
+  margin-top: 20px;
+}
+
+
+/* posicionamiento para pc*/
+.recienHecho{
+  grid-area: recienHecho;
+  display:grid;
+  grid-template-rows: 100px auto;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+  "nav"
+  "recien";
+}
+.nav{
+  grid-area: nav;
+  display:grid;
+  grid-template-columns: 170px auto;
+  grid-template-rows: 1fr;
+  grid-template-areas: "logo menu";
+}
+.nav .logo{
+  grid-area: logo;
+  justify-self: start;
+}
+.nav .menu{
+  grid-area: menu;
+  justify-self: end;
+  align-self: center;
+  padding:0;
+}
+.menu .items{
+  display: grid;
+  padding:0;
+  margin:0;
+  grid-template-columns: repeat(5,1fr);
+  grid-template-rows: 1fr;
+  grid-template-areas: "item1 item2 item3 item4 item5";
+}
+.items .item1{
+  grid-area: item1;
+}
+.items .item2{
+  grid-area: item2;
+}
+.items .item3{
+  grid-area: item3;
+}
+.items .item4{
+  grid-area: item4;
+}
+.items .item5{
+  grid-area: item5;
+}
+.recien{
+  grid-area: recien;
+}
+.brunch{
+  grid-area: brunch;
+  padding:30px;
+}
+.celebra{
+  grid-area:celebra;
+  padding:30px;
+}
+.ven{
+  grid-area:ven;
+}
+
+.cuatro{
+  grid-area:cuatro;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: 
+  "card1 card2" 
+  "card3 card4";
+}
+.card1{
+  grid-area: card1;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "img texto-card";
+  justify-self: center;
+  align-self: center;
+}
+.card2{
+  grid-area: card2;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "img texto-card";
+  justify-self: center;
+  align-self: center;
+}
+.card3{
+  grid-area: card3;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "img texto-card";
+  justify-self: center;
+  align-self: center;
+}
+.card4{
+  grid-area: card4;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "img texto-card";
+  justify-self: center;
+  align-self: center;
+}
+.img{
+  grid-area: img;
+}
+.texto-card{
+  grid-area: texto-card;
+}
+
+.contacta{
+  padding:50px;
+  grid-area: contacta;
+}
+.dondeEstamos{
+  grid-area: sabes;
+  padding:50px;
+}
+.footer{
+  grid-area: footer;
+  padding:30px;
+}
+
+/*para tablet*/
+
+@media screen and (max-width: 900px) and (min-width: 749.99px) {
+  .cuatro{
+  grid-area:cuatro;
+  display:grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4,1fr);
+  grid-template-areas: 
+  "card1" "card2" 
+  "card3" "card4";
+  }
+
+}
+
+/*para móviles*/
+
+@media screen and (max-width: 749.99px) {
+  .contenedor {
+  width: 1000px;
+  height:auto;
+  margin: auto;
+  font-family: "Open Sans", sans-serif;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 400px 300px 300px 400px auto 300px 300px 100px;
+  grid-template-areas:
+    "recienHecho"
+    "brunch" 
+    "celebra"
+    "ven "
+    "cuatro"
+    "contacta "
+    " sabes"
+    "footer ";
+  text-align: center;
+}
+.cuatro{
+  grid-area:cuatro;
+  display:grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4,1fr);
+  grid-template-areas: 
+  "card1" 
+  "card2" 
+  "card3" 
+  "card4";
+  }
+
+  .brunch{
+    padding:60px;
+  }
+  .celebra{
+    padding:60px;
+  }
+  .contacta{
+    padding:60px;
+  }
+  .dondeEstamos{
+    padding:60px;
+  }
+}
+

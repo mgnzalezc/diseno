@@ -1,0 +1,230 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+.contenedor {
+	background:#ccc;
+	display: flex; /* esto no lo puse, correccion */
+	flex-direction: column; /* esto no lo puse, correccion */
+}
+
+body {
+	background:#e9e9e9;
+}
+
+header {
+	background:#2c3e50;
+	display: flex;
+	width: 100%;
+	height: 20%;
+	align-items: center;
+	justify-content: space-between;
+}
+
+header .logo {
+	color:#fff;
+	font-size:30px;
+	display: flex;
+	flex-direction: row;
+	margin:10pt;
+}
+
+header .logo img {
+	width:50px;
+	vertical-align: top;
+}
+
+header .logo a {
+	color:#fff;
+	margin: 10pt;
+}
+
+header nav {
+	margin: 0;
+	display: flex;
+	justify-content: space-between;
+}
+
+header nav a {
+	background:#c0392b;
+	color:#fff;
+	padding: 35px;
+	text-decoration: none;
+}
+
+header nav a:hover /*a completar*/
+{
+	color:black
+}
+
+.main {
+	background:#fff;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	width: 100%;
+	height: 60%;
+}
+
+/*he añadido un div "articulos" para separar los articulos del aside*/
+/* ESTO NO VA A FUNCIONAR PORQUE HE CAMBIADO EL HTML PARA HACERLO CON GRID */
+
+.articulos{
+	width:70%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.main article {
+	padding:50pt;
+	padding-left: 20pt;
+}
+
+.main article:nth-last-child(1){
+
+}
+
+.main article h2{
+    
+}
+.main article ul{
+    list-style-type: square;
+    list-style-position:inside;
+}
+
+aside {
+	display:flex;
+	flex-direction: column;
+	background:#e67e22;
+	width:40%;
+	justify-content: center;
+	align-items: center;
+}
+
+/* post examen en correccion he tocado los margenes y padding 
+de las fotos y se ve mucho mejor todo */
+aside .widget {
+	background: #d35400;
+	padding: 10pt;
+	margin:10pt;
+	
+}
+aside .widget img {
+    max-height: 200px;
+	width:200px;
+	margin:20pt;
+}
+
+footer {
+	background:#2c3e50;
+	align-self: flex-end; /* esto no lo puse, correccion */
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100%;
+	height: 20%;
+	padding:10pt;
+}
+
+footer .links {
+	background:#c0392b;
+	padding:10pt;
+	text-align: center;
+}
+
+footer .links a {
+	color:#fff;
+	text-decoration: none;
+}
+
+footer .links a:hover {
+	background:#E74C3C;
+}
+
+footer .social {
+	background:#e67e22;
+	padding:10pt;
+	text-align: center;
+}
+
+footer .social a {
+	color:#fff;
+	text-decoration: none;
+}
+
+@media screen and (max-width: 800px) {
+	.contenedor {
+		width: 100vw;
+		height: 400pt;
+		padding: 5pt;
+		display: flex;
+		flex-direction: column; /* esto no se si lo puse */
+	}
+
+	header {
+		width: 100vw;
+		height: 100pt;
+		display: flex;
+		
+		justify-content: space-between;
+		margin: 5pt;
+	}
+
+	header .logo {
+		align-self: center;
+	}
+
+	header nav {
+		align-self: center;
+	}
+
+	.main{
+		display: flex;
+		flex-direction: column;
+	}
+	aside {
+		width: 100vw;
+		height: 100vh;
+		display: flex; /* esto no lo puse, correccion */
+		flex-direction: row;
+	}
+
+	aside .widget {
+		align-self: flex-end;
+	}
+
+	/*me ha faltado tiempo pero se que el footer tiene que estar al final*/
+
+	/*CORRECCION: el footer no funcionaba porque el height de main estaba al 100%, cuando deberia ser 60% porque el header son 20 y el footer otros 20*/
+	footer{
+		display: flex;
+		align-self: flex-end;
+		flex-direction: row;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.contenedor {
+		width: 100vw;
+		height: fit-content;
+		display: flex;
+		flex-direction: column;
+	}
+
+	aside {
+		width: 600px;
+		height: 100vh;
+		display: flex; /* esto no lo puse, correccion */
+		flex-direction: column;
+	}
+
+	
+	/*me ha faltado tiempo pero se que el footer tiene que estar al final*/
+	footer{
+		display: flex;
+		align-items: flex-end;
+	}
+}

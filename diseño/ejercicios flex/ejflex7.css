@@ -1,0 +1,45 @@
+.nums{
+    display:flex;
+    color: white;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 900px;
+}
+
+.d1, .d2, .d3, .d4, .d5, .d6, .d7, .d8, .d9, .d10{
+    width: 30%;
+    height: 50px;
+}
+.d1{
+    background-color: green;
+}
+.d2{
+    background-color: rgb(65, 125, 136);
+}
+.d3{
+    background-color: rgb(151, 15, 163);
+}
+.d4{
+    background-color: rgb(22, 4, 88);
+}
+.d5{
+    background-color: rgb(197, 179, 20);
+}
+.d6{
+    background-color: rgb(216, 154, 20); 
+}
+.d7{
+    background-color: rgb(223, 19, 53);
+}
+.d8{
+    background-color: rgb(115, 122, 115);    
+}
+.d9{
+    background-color: rgb(61, 223, 61);
+}
+.d10{
+    background-color: rgb(11, 73, 11);
+}
