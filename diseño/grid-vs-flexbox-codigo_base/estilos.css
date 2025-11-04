@@ -1,0 +1,129 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: #1D202B;
+	color: #fff;
+	font-family: 'Roboto', sans-serif;
+}
+
+.contenedor {
+	width: 90%;
+	max-width: 1200px;
+	margin: auto;
+	padding: 50px;
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: 2fr 1fr;
+	grid-template-areas:
+	"conciertos banner";
+	gap: 20px;
+}
+
+.titulo {
+	font-size: 24px;
+	padding: 20px 0;
+}
+
+.contenedor-conciertos {
+	grid-area: conciertos;
+	display:grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	gap: 20px;
+}
+
+
+.card {
+	border-radius: 10px;
+	min-height: 200px;
+	font-weight: bold;
+	padding: 20px;
+	position: relative;
+	overflow: hidden;
+	background-size: cover;
+	background-position: center center;
+
+	
+}
+
+.card .textos {
+	height: 100%;
+	display:flex;
+    flex-direction: column;
+	justify-content: space-between;
+}
+
+.banner {
+	border-radius: 10px;
+	text-align: center;
+	padding: 20px;
+	background-size: cover;
+	background-position: center center;
+	grid-area: banner;
+
+}
+
+.banner ul {
+	list-style: none;
+}
+
+.banner ul li {
+	margin: 15px;
+	font-weight: bold;
+}
+
+.banner .boton {
+	background: #FFD600;
+	display: block;
+	width: 100%;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
+	padding: 10px;
+	border: none;
+	border-radius: 100px;
+	font-family: 'Roboto', sans-serif;
+	cursor: pointer;
+}
+
+@media screen and (max-width: 900px) {
+	
+	.contenedor-conciertos{
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(6, 1fr);
+		grid-template-areas:
+		"conciertos"
+		"banner";
+	}
+	
+}
+
+
+@media screen and (max-width: 600px) {
+	body{
+		width: auto;
+		height:auto;
+	}
+	.contenedor{
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1fr;
+		grid-template-areas:
+		"conciertos"
+		"banner";
+	}
+	.contenedor-conciertos{
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(6, 1fr);
+		grid-template-areas:
+		"conciertos"
+		"banner";
+	}
+	.banner{
+		height:fit-content;
+	}
+}
