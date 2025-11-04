@@ -8,9 +8,9 @@
 }
 
 /* Main Styling */
-html,
-body {
+html, body {
 	font-family: 'Montserrat', sans-serif;
+	color: wheat;
 }
 
 h1 {
@@ -40,12 +40,16 @@ p {
 }
 
 .grid-wrapper {
-
+	padding:10px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-areas:
+	"texto texto bolita1 bolita2"
+	"texto texto bolita3 bolita4"
+	"bolita5 bolita6 bolita7 bolita8";
 }
 
-.box {
-	
-}
 
 .box img {
 	width: 100%;
@@ -70,36 +74,43 @@ p {
 }
 
 .box-1 {
-	
+	grid-area: texto;
+	margin:10px;
+	padding:40px;
+	border-radius: 20pt;
+	-webkit-border-radius: 20pt;
+	-moz-border-radius: 20pt;
+	-ms-border-radius: 20pt;
+	-o-border-radius: 20pt;
 }
 
 .box-2 {
-	
+	grid-area: bolita1;
 }
 
 .box-3 {
-	
+	grid-area: bolita2;
 }
 
 .box-4 {
-	
+	grid-area: bolita3;
 }
 
 .box-5 {
-
+	grid-area: bolita4;
 }
 
 .box-6 {
-	
+	grid-area: bolita5;
 }
 .box-7 {
-	
+	grid-area: bolita6;
 }
 .box-8 {
-	
+	grid-area: bolita7;
 }
 .box-9 {
-	
+	grid-area: bolita8;
 }
 
 .box-2,
@@ -113,4 +124,6 @@ p {
 	border-radius: 50%;
 	height: 250px;
 	width: 250px;
+	margin:10px;
+	padding: 40px;;
 }
