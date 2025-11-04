@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/*Reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Main Styling */
+html,
+body {
+	font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+	font-size: 5rem;
+	font-weight: 400;
+	padding: 10px 0;
+}
+
+p {
+	font-size: 1rem;
+	margin: 20px 0;
+	line-height: 1.7em;
+}
+
+/* Utility Classes */
+.container {
+	margin: auto;
+	max-width: 1300px;
+	overflow: auto;
+	padding: 0 20px;
+}
+
+/* Grid */
+#grid {
+	padding: 40px 0;
+	height: 100vh;
+}
+
+.grid-wrapper {
+
+}
+
+.box {
+	
+}
+
+.box img {
+	width: 100%;
+}
+
+.box-1,
+.box-4,
+.box-7,
+.box-9 {
+	background: #1a2937;
+}
+
+.box-2,
+.box-6 {
+	background: #eda640;
+}
+
+.box-3,
+.box-5,
+.box-8 {
+	background: #bfcdd9;
+}
+
+.box-1 {
+	
+}
+
+.box-2 {
+	
+}
+
+.box-3 {
+	
+}
+
+.box-4 {
+	
+}
+
+.box-5 {
+
+}
+
+.box-6 {
+	
+}
+.box-7 {
+	
+}
+.box-8 {
+	
+}
+.box-9 {
+	
+}
+
+.box-2,
+.box-3,
+.box-4,
+.box-5,
+.box-6,
+.box-7,
+.box-8,
+.box-9 {
+	border-radius: 50%;
+	height: 250px;
+	width: 250px;
+}
