@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Main Styling */
+html,
+body {
+	font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+h2 {
+	font-size: 2rem;
+}
+h3 {
+	font-size: 1.75rem;
+}
+h4 {
+	font-size: 1.5rem;
+}
+h5 {
+	font-size: 1.25rem;
+}
+h6 {
+	font-size: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-transform: uppercase;
+	margin-bottom: 15px;
+}
+
+ul {
+	list-style: none;
+}
+
+p {
+	font-size: 1rem;
+	margin: 10px 0;
+	line-height: 1.7em;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* Utility Classes */
+body{
+	display: flex;
+	flex-direction: column;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 30px;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 25px;
+
+}
+
+.container ul{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.large {
+	font-size: 20px;
+}
+
+.display-1 {
+	font-size: 4rem;
+	font-weight: 900;
+}
+
+.display-2 {
+	font-size: 3.5rem;
+}
+
+.display-3 {
+	font-size: 2rem;
+}
+
+.bk-gray {
+	background: #ededed;
+}
+
+.bk-black {
+	background: #000;
+	color: #fff;
+}
+
+.bk-white {
+	background: #fff;
+}
+
+.bk-red {
+	background: #e9475d;
+	color: #fff;
+}
+
+.bk-blue {
+	background: #66c8f7;
+	color: #fff;
+}
+
+.bk-black a,
+.bk-red a,
+.bk-blue a {
+	color: #fff !important;
+}
+
+.txt-right {
+	text-align: right;
+}
+
+.btn {
+	display: inline-block;
+	font-size: 15px;
+	padding: 12px 23px;
+	cursor: pointer;
+	font-weight: bold;
+	letter-spacing: 1px;
+	border-radius: 4px;
+	width: 100%;
+}
+
+.btn-light {
+	background: #fff;
+	border: 0;
+	color: #66c8f7;
+}
+
+
+
+/* Navbar */
+#navbar {
+	height: 100px;
+}
+
+#navbar .logo img {
+	height: 60px;
+}
+
+#navbar a {
+	color: #000;
+	text-transform: uppercase;
+	font-size: 18px;
+	font-weight: 600;
+}
+
+#navbar .container {
+	
+}
+
+#navbar ul {
+	
+}
+
+#navbar ul li {
+	margin-left: 20px;
+}
+
+/* Showcase */
+#showcase {
+	padding: 80px 0;
+}
+
+.showcase {
+	
+}
+
+
+
+/* Features */
+#features {
+	padding: 80px 0;
+}
+
+.wrapper {
+	display:grid;
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-columns: 1fr 1.5fr;
+	grid-template-areas:
+	"box-1 box-2"
+	"box-1 box-4"
+	"box-3 box-4";
+	gap: 5pt;
+}
+
+.box {
+	padding: 40px;
+}
+
+.box-1 {
+	grid-area: box-1;
+}
+
+.box-2 {
+	grid-area: box-2;
+}
+
+.box-3 {
+	grid-area: box-3;
+}
+
+.box-4 {
+	grid-area: box-4;
+}
+
+
+/* Footer */
+#mainfooter {
+	text-align: center;
+	padding: 30px;
+}
+
+@media screen and (max-width: 800px) {
+	
+}
