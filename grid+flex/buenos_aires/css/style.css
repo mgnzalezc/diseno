@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Main Styling */
+html,
+body {
+	font-family: 'Montserrat', sans-serif;
+	color: #fff;
+	
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+
+p {
+	font-size: 1rem;
+	margin: 10px 0;
+	line-height: 1.7em;
+}
+
+/* Utility Classes */
+
+
+.display-1 {
+	font-size: 6rem;
+}
+
+.display-2 {
+	font-size: 2.5rem;
+}
+
+.display-1,
+.display-2 {
+	text-transform: uppercase;
+}
+
+.large {
+	font-size: 1.2rem;
+}
+
+/* Showcase */
+#showcase {
+	background: url('/grid+flex/buenos_aires/images/background-showcase.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 750px;
+}
+
+.showcase-box{
+	padding: 100px;
+	padding-right: 450px;
+}
+
+
+/* Gallery */
+#gallery {
+	background: url('/grid+flex/buenos_aires/images/background-gallery.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.gallery-grid-box {
+	border-radius: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#gallery .gallery-grid {
+	display:grid;
+	grid-template-columns: repeat(3, 300px);
+	grid-template-rows: repeat(2, 350px);
+	grid-template-areas: 
+	"b1 b2 b3"
+	"b1 b4 b5";
+	gap: 20px;
+	justify-content: center;
+	padding: 20px;
+	
+}
+
+#gallery .box-1 {
+	background: url('/grid+flex/buenos_aires/images/gallery-1.jpg');
+	width: 100%;
+	height: 100%;
+	grid-area: b1;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	
+}
+#gallery .box-2 {
+	background: url('/grid+flex/buenos_aires/images/gallery-2.jpg');
+	width: 100%;
+	height: 100%;
+	grid-area: b2;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#gallery .box-3 {
+	background: url('/grid+flex/buenos_aires/images/gallery-3.jpg');
+	width: 100%;
+	height: 100%;
+	grid-area: b3;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#gallery .box-4 {
+	background: url('/grid+flex/buenos_aires/images/gallery-4.jpg');
+	width: 100%;
+	height: 100%;
+	grid-area: b4;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#gallery .box-5 {
+	background: url('/grid+flex/buenos_aires/images/gallery-5.jpg');
+	width: 100%;
+	height: 100%;
+	grid-area: b5;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+
+
+/* Footer */
+
+#mainfooter .container{
+	height: 100px;
+	margin-bottom: 50px;
+	margin-top: 30px;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+#mainfooter .container img{
+	height: 30px;
+	weight: 30px;
+	
+}
