@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Main Styling */
+html,
+body {
+	font-family: 'Montserrat', sans-serif;
+	color: #47519a;
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+h2 {
+	font-size: 2rem;
+}
+h3 {
+	font-size: 1.75rem;
+}
+h4 {
+	font-size: 1.5rem;
+}
+h5 {
+	font-size: 1.25rem;
+}
+h6 {
+	font-size: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin-bottom: 15px;
+}
+
+ul {
+	list-style: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+p {
+	font-size: 1rem;
+	margin: 10px 0;
+	line-height: 1.7em;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* Utility Classes */
+.container {
+	max-width: 1100px;
+	margin: 0 auto;
+	
+}
+
+.large {
+	font-size: 20px;
+}
+
+.small {
+	font-size: 12px;
+}
+
+.baseline {
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+}
+
+/* Mainbody */
+#mainbody {
+	background-image: linear-gradient(#efeff5, #fff);
+	height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+	height: 80px;
+}
+
+.navbar .logo a {
+	font-size: 1.9rem;
+	font-weight: bold;
+}
+
+.navbar .logo span {
+	font-weight: 200;
+}
+
+.navbar a {
+	color: #47519a;
+	font-weight: 500;
+	font-size: 0.8rem;
+}
+
+.navbar .container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding:30px;
+
+}
+
+.navbar ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.navbar ul li {
+	margin-left: 20px;
+}
+
+.mainnavbar {
+	background: #efeff5;
+}
+
+/* Main Grid */
+#maingrid {
+	padding: 20px 0;
+}
+
+#maingrid .container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-areas: 
+	"box1 box1 box2"
+	"box1 box1 box3"
+	"box5 box6 box4";
+	gap: 20px;
+	padding: 20px;
+}
+
+.maingrid-box {
+	padding: 80px 20px 20px 20px;
+	font-size: 1.1rem;
+	font-weight: 400;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-radius: 10px;
+	
+}
+
+.maingrid-box a,
+.maingrid-box {
+	color: #fff;
+}
+
+#maingrid .box-1 {
+	background: url('/PRACTICAS/NEWS_Gonzalez-Carrascosa_Maria/images/news-1.jpg');
+	grid-area: box1;
+}
+#maingrid .box-2 {
+	background: #c2d7d8;
+	color: #47519a;
+	grid-area: box2;
+}
+
+#maingrid .box-2 a {
+	color: #47519a;
+}
+
+#maingrid .box-3 {
+	background: #47519a;
+	grid-area: box3;
+}
+#maingrid .box-4 {
+	background: #ff834c;
+	grid-area: box4;
+}
+#maingrid .box-5 {
+	background: url('/PRACTICAS/NEWS_Gonzalez-Carrascosa_Maria/images/news-2.jpg');
+	grid-area: box5;
+}
+#maingrid .box-6 {
+	background: url('/PRACTICAS/NEWS_Gonzalez-Carrascosa_Maria/images/news-3.jpg');
+	grid-area: box6;
+}
+
+#maingrid .box-1,
+#maingrid .box-5,
+#maingrid .box-6 {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+
+
+/* Footer */
+#mainfooter {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding: 20px;
+}
+
+
+@media screen and (max-width: 800px) {
+	#maingrid .container {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	padding: 20px;
+	}
+}
