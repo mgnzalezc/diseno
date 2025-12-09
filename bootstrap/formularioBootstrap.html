@@ -11,13 +11,17 @@
     <div class = "container">
         <div class="text-center">
             <h2 class="h2">Formulario checkout</h1>
-            <p>Texto que pone ahi en el formulario.</p>
+            <p>Texto que pone ahi en el formulario. Texto que pone ahi en el formulario. Texto que pone ahi en el formulario. Texto que pone ahi en el formulario. Texto que pone ahi en el formulario. Texto que pone ahi en el formulario. Texto que pone ahi en el formulario. Texto que pone ahi en el formulario.</p>
         </div>
 
         <form action="" method="POST" class="row ml-3 mr-3">
-            <div class="col-8"> 
-                <div id="direccionEnvio" class="p-3">
-                    <h4 class="h4">Direccion de envio</h4>
+            <div class="col-7"> 
+                <div id="direccionEnvio">
+                    <div class="row mb-3">
+                        <div class="col">
+                            <h4 class="h4">Direccion de envio</h4>
+                        </div>
+                    </div> <!--titulo Direccion de envio-->
                     
                     <div class="row mb-3">
                         <div class="col">
@@ -38,20 +42,128 @@
                         </div>
                     </div> <!--@-->
 
-
                     <div class="row mb-3">
-                        <label for="email" class="form-label">Email (Opcional)</label>
-                        <input type="email" name="correo" class="form-control">
+                        <div class="col">
+                            <label for="email" class="form-label">Email (Opcional)</label>
+                            <input type="email" name="correo" class="form-control">
+                        </div>
                     </div> <!--email-->
 
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="direccion" class="form-label">Dirección</label>
+                            <input type="text" name="direccion" class="form-control">
+                        </div>
+                    </div> <!--direccion 1-->
+
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="direccion2" class="form-label">Dirección 2 (Opcional)</label>
+                            <input type="text" name="direccion2" class="form-control">
+                        </div>
+                    </div> <!--direccion 2-->
+
+                    <div class="row mb-5">
+                        <div class="col-5">
+                            <label for="pais" class="form-label">País</label>
+                            <select name="pais" class="form-select">
+                                <option value="" disabled selected>Elige...</option>
+                            </select>
+                        </div>
+                        <div class="col-4">
+                            <label for="estado" class="form-label">Estado</label>
+                            <select name="estado" class="form-select">
+                                <option value="" disabled selected>Elige...</option>
+                            </select>
+                        </div>
+                        <div class="col-3">
+                            <label for="postal" class="form-label">Codigo postal</label>
+                            <input type="text" name="postal" class="form-control">
+                        </div>
+                    </div> <!--select-->
+                    
                     
                 </div> <!--direccion envio-->
+
+                <hr>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="facturacion">
+                                <label class="form-check-label" for="facturacion">
+                                    La dirección de envío es la misma que mi dirección de facturación.
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="guardar">
+                                <label class="form-check-label" for="guardar">
+                                    Guardar esta info para la próxima vez.
+                                </label>
+                            </div>
+                        </div>
+                    </div><!--checks-->
+                <hr>
                 
-                
+                <div id="pago">
+                    <div id="titulo" class="row">
+                        <div class="col">
+                            <h4 class="h4">Pago</h4>
+                        </div>
+                    </div> <!--pago titulo-->
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="credito">
+                        <label class="form-check-label" for="credito">
+                            Tarjeta de crédito
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="debito">
+                        <label class="form-check-label" for="debito">
+                            Tarjeta de débito
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="paypal">
+                        <label class="form-check-label" for="paypal">
+                            Paypal
+                        </label>
+                    </div>
+
+                    <br>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="nombretarjeta" class="form-label">Nombre en la tarjeta</label>
+                            <input type="text" name="nombretarjeta" class="form-control">
+                        </div>
+                        <div class="col">
+                            <label for="numerotarjeta" class="form-label">Numero de la tarjeta</label>
+                            <input type="text" name="numerotarjeta" class="form-control">
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="vencim" class="form-label">Vencimiento</label>
+                            <input type="text" name="vencim" class="form-control">
+                        </div>
+                        <div class="col-3">
+                            <label for="cvv" class="form-label">CVV</label>
+                            <input type="text" name="cvv" class="form-control">
+                        </div>
+                    </div>
+
+                    <hr>
+                </div> <!--pago-->
+
+                <button type="submit" class="btn btn-primary w-100">Continuar con el pago</button>
 
             </div> <!--columna 8-->
             
-            <div class="col-4 p-3"> 
+            <div class="col-5 p-3"> 
 
             </div>
         </form>
