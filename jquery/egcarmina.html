@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("h2+h1").on("click", function(){
+                $(this).css("font-family","Impact");
+            })
+            $("h2").on("dblclick", function(){
+                $(this).css("font-size","4em");
+            })
+            $("#boton").on("click", function(){
+                $("h1").css("color","red");
+            })
+            $(".cuadrado").on("mousedown",function(){
+                $(this).addClass("colorVerde");
+            })
+            $(".cuadrado").on("mouseenter",function(){
+                $("#mensaje").html("<h3>Ha entrado el ratón</h3>")
+            })
+            $(".cuadrado").on("mouseleave",function(){
+                $("#mensaje").html("<h3>Ha salido el ratón</h3>")
+            })
+            $("#intercambiacolor").on("click", function(){
+                $(".cuadrado").toggleClass("colorAzul");
+            })
+            $("input").on("keypress",function(e){
+                if (e.which==13) { $("#mensaje").html("<h3>Has pulsado el enter</h3>")}
+            })
+            $("#convertir").on("click", function(){
+                $(":nth-child(5)").replaceWith("<div class='rectangulo'>Nuevo</div>");
+            })
+        })
+    </script>   
+    <style>
+        .cuadrado{
+            width:200px;
+            height: 200px;
+            background-color: red;
+            border: 2px solid black;
+            margin:10px;
+        }
+        .rectangulo{
+            width: 100px;
+            height: 300px;
+            background-color: chartreuse;
+        }
+        .colorVerde{
+            background-color: green;
+        }
+        .colorAzul{
+            background-color: blue;
+        }
+    </style> 
+</head>
+<body>
+    <h2> Titulo 2</h2>
+    <h1> Titulo 1</h1>
+    
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod accusamus deserunt quibusdam voluptatibus soluta esse laudantium ex veniam nemo. Voluptatem laudantium numquam possimus dolor facere eaque ipsa inventore in molestiae!</p>
+    <button id="boton">Cambiar color</button>
+    <div class="cuadrado"><h1>Primero</h1></div>
+    <div class="cuadrado"><h1>Segundo</h1></div>
+    <button id="intercambiacolor">Intercambia Color</button> <br/>
+    <input value=""/>
+    <p id="mensaje"></p>
+    <button id="convertir">Convertir</button>
+</body>
+</html>
