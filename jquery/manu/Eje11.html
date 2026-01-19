@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!--11-Detecta cuando el usuario pasa el ratón sobre un <div> con id #area y cambia su fondo a verde.-->
+</head>
+<body>
+    <div id="area">Soy un div</div>
+</body>
+</html>
+<script>
+    $(function () {
+        $("#area").mouseenter(function (e) {
+            $(this).css("background-color", "green");
+        });
+        $("#area").mouseleave(function (e) {
+            $(this).css("background-color", "black");
+        })    
+    });
+</script>

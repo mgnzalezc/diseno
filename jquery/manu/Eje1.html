@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!--1-Detecta cuando se presiona la tecla "Enter" en un <input> y muestra un mensaje en la consola.-->
+</head>
+<body>
+    <form action="">
+        <input type="text" value="Pulsame" id="boton">
+    </form>
+</body>
+</html>
+<script>
+    $(function () {
+        $("#boton").keydown(function (e) {
+            if (e.keyCode == 13) {
+                e.preventDefault();
+                console.log("Enter presionado");
+            }
+        })
+    });
+</script>

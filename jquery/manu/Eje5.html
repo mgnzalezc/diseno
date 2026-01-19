@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!--5-Cambia el fondo de un campo de texto a amarillo cuando se presiona la tecla "Tab".-->
+</head>
+<body>
+    <form action="">
+        <input type="text">
+    </form>
+</body>
+</html>
+<script>
+    $(function () {
+        $("input").keydown(function (e) {
+                if (e.key = "Tab") {
+                    $(this).css("background-color", "yellow")
+                }
+        })
+    });
+</script>

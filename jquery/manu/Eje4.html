@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>ç
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!--4-Detecta cuando el usuario presiona la tecla "Esc" y limpia el contenido de un campo con id #campo.-->
+</head>
+<body>
+    <form action="">
+        <input type="text" id="campo">
+    </form>
+</body>
+</html>
+<script>
+    $(function () {
+        $("#campo").keydown(function (e) {
+            if (e.key == "Escape") {
+                e.preventDefault();
+                $(this).val("");
+            }
+        })
+    });
+</script>

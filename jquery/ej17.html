@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+
+            $("#area").mousemove(function (e) {
+                let x = e.pageX + "px";
+                let y = e.pageY + "px";
+                $("#foto").css("top", y);
+                $("#foto").css("left", x);
+            });
+        });
+    
+    </script>
+    <style>
+        #area{
+            position: relative;
+            border: 1px solid black;
+            width: 400px;
+            height: 400px;
+        }
+
+        #foto{
+            position: absolute;
+            width: 200px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="area" >
+        <img id="foto" src="/fotos/racoon1.jpg">
+    </div>
+</body>
+</html>
