@@ -34,7 +34,7 @@ $(function () {//Version acortada de lo anterior
     //Esq:      27
     //Tab:      9
     //Shift     16
-    //Delete    46
+    //Delete    46 o 8
     //Para el codigo del evento usamos e.keyCode
     $("#input").keydown(function (e) {
         if (e.keyCode === 13) {

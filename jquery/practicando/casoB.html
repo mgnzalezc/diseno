@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    
+</body>
+</html>
+
+<section>    
+        <p><strong>1. Detecta Enter y cambia texto:</strong></p>
+        <input type="text" id="inputEnter" placeholder="Presiona Enter aquí">
+        <p id="textoCambiante">texto</p>
+
+        <p><strong>2. Bloquea escritura al llegar a 10 caracteres:</strong></p>
+        <input type="text" id="inputLimitado" placeholder="Máximo 10 caracteres">
+
+        <p><strong>3. Muestra en consola si es letra o número:</strong></p>
+        <input type="text" id="inputTipo" placeholder="Escribe aquí (mira la consola)">
+    </section>
+
+    <section>
+
+        <p><strong>4 y 5. Añadir/Eliminar elementos lista:</strong></p>
+        <button id="btnAnadir">Añadir Elemento</button>
+        <button id="btnEliminar">Eliminar Elemento</button>
+        <ul id="listaDinamica">
+            <li>Elemento base</li>
+        </ul>
+
+        <p><strong>6. Tooltip al pasar el ratón:</strong></p>
+        <span id="iconoAyuda" style="cursor: pointer; font-size: 24px;">ℹ️</span>
+        <div id="tooltip" style="display: none; background: #333; color: white; padding: 5px; position: absolute;">Soy un tooltip</div>
+    </section>
+
+    <section>
+    
+        <p><strong>7. Detecto si el ancho es < 600px:</strong> </p>
+        <div id="avisoVentana" class="aviso">¡La ventana es pequeña (menos de 600px)!</div>
+    </section>
+
+    <section>
+        
+        <p><strong>8. Contar elementos con clase .item:</strong></p>
+        <div class="item">item 1</div>
+        <div class="item">item 2</div>
+        <div>No soy item</div>
+        <div class="item">item 3</div>
+        <p>Resultado del conteo: <span id="resultadoConteo"></span></p>
+        <button onclick="contarItems()">Contar items</button>
+
+        <hr>
+
+        <p><strong>9. Modificar HTML:</strong></p>
+        <div id="contenedor">
+            <p>Texto 1 (Dentro)</p>
+            <p class="especial">Texto 2 (Clase especial)</p>
+        </div>
+        <p>Texto fuera</p>
+        <button onclick="ejecutarEjercicio9()">Ejecutar cambios Ej 9</button>
+
+        <hr>
+
+        <p><strong>10. Modificar lista menú:</strong></p>
+        <ul id="menu">
+            <li>Inicio</li>
+            <li class="activo">Servicios</li>
+            <li>Contacto</li>
+        </ul>
+        <button onclick="ejecutarEjercicio10()">Ejecutar cambios Ej 10</button>
+    </section>
+
+    <script>
+      
+
+        // 1.Detecta Enter y cambia texto.
+        const inputEnter = document.getElementById('inputEnter');
+        const textoCambiante = document.getElementById('textoCambiante');
+        
+        inputEnter.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                textoCambiante.textContent = "¡Has presionado enter!";
+                textoCambiante.style.color = "green";
+            }
+        });
+
+        // 2.- Bloquear a 10 
+        const inputLimitado = document.getElementById('inputLimitado');
+        
+        inputLimitado.addEventListener('keydown', (event) => {
+            // permitimos borrar (Backspace/Delete) y flechas, pero bloqueo si length >= 10
+            const teclasPermitidas = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'];
+            if (inputLimitado.value.length >= 10 && !teclasPermitidas.includes(event.key)) {
+                event.preventDefault(); // Bloquea la acción de escribir
+            }
+        });
+
+        // 3.Muestrar si es letra o numero
+        const inputTipo = document.getElementById('inputTipo');
+        
+        inputTipo.addEventListener('keydown', (event) => {
+            // ignoro (enter, backspace, etc) para el log
+            if (event.key.length === 1) { 
+                if (/[0-9]/.test(event.key)) {
+                    console.log(`Presionaste un NÚMERO: ${event.key}`);
+                } else if (/[a-zA-Z]/.test(event.key)) {
+                    console.log(`Presionaste una LETRA: ${event.key}`);
+                } else {
+                    console.log(`Presionaste otro carácter: ${event.key}`);
+                }
+            }
+        });
+
+
+        // 4.Añadir elementos al hacer click
+        const btnAnadir = document.getElementById('btnAnadir');
+        const listaDinamica = document.getElementById('listaDinamica');
+
+        btnAnadir.addEventListener('click', () => {
+            const nuevoLi = document.createElement('li');
+            nuevoLi.textContent = `Nuevo elemento ${listaDinamica.children.length + 1}`;
+            listaDinamica.appendChild(nuevoLi);
+        });
+
+        // 5.Elimina elementos de una lista al pulsar un botón.
+        const btnEliminar = document.getElementById('btnEliminar');
+
+        btnEliminar.addEventListener('click', () => {
+            if (listaDinamica.lastElementChild) {
+                listaDinamica.removeChild(listaDinamica.lastElementChild);
+            } else {
+                alert("No quedan elementos para borrar");
+            }
+        });
+
+        // 6.Mostrar o oculta un tooltip al pasar el ratón sobre un icono.
+        const icono = document.getElementById('iconoAyuda');
+        const tooltip = document.getElementById('tooltip');
+
+        icono.addEventListener('mouseover', () => {
+            tooltip.style.display = 'block';
+        });
+        
+        icono.addEventListener('mouseout', () => {
+            tooltip.style.display = 'none';
+        });
+
+
+       
+
+         // 7.Detectar si tiene menos de 600px y avisar
+        const avisoDiv = document.getElementById('avisoVentana');
+
+        function comprobarAncho() {
+            if (window.innerWidth < 600) {
+                avisoDiv.style.display = 'block';
+            } else {
+                avisoDiv.style.display = 'none';
+            }
+        }
+
+        // Ejecutar al cargar y al redimensionar
+        window.addEventListener('resize', comprobarAncho);
+        comprobarAncho(); // comprobacion
+
+
+       
+
+        // 8.Contar cuantos elementos hay con una clase especifica.
+        function contarItems() {
+            const items = document.querySelectorAll('.item');
+            const resultado = items.length;
+            document.getElementById('resultadoConteo').textContent = resultado;
+            console.log("Número de elementos .item:", resultado);
+        }
+
+        // 9. Modificar html.
+        function ejecutarEjercicio9() {
+            // a) cambiar el color
+            const parrafosContenedor = document.querySelectorAll('#contenedor p');
+            parrafosContenedor.forEach(p => p.style.color = 'red');
+
+            // b) cambiar tamaño parrafo
+            const especial = document.querySelector('.especial');
+            if(especial) especial.style.fontSize = '24px';
+
+            // c) ocultar parrafo
+            // Seleccionamos todos los párrafos que no sean descendientes de #contenedor
+            const parrafoFuera = document.querySelector('body > p:not(#contenedor p)'); 
+            const allP = document.querySelectorAll('p');
+            allP.forEach(p => {
+                if (p.parentElement.id !== 'contenedor') {
+                    p.style.display = 'none';
+                }
+            });
+        }
+
+        // 10. Modificar html
+        function ejecutarEjercicio10() {
+            // a) cambiar el fondo del elemento
+            const activo = document.querySelector('#menu .activo');
+            if(activo) activo.style.backgroundColor = 'yellow';
+
+            // b) Cambia el color del último li
+            const ultimoLi = document.querySelector('#menu li:last-child');
+            if(ultimoLi) ultimoLi.style.color = 'blue';
+
+            // c) Añade una clase al primer li
+            const primerLi = document.querySelector('#menu li:first-child');
+            if(primerLi) primerLi.classList.add('seleccionado');
+        }
+
+    </script>
+</body> 

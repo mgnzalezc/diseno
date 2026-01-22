@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="../jq/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready (function(){
+            $("#inputEnter").keydown (function(e){
+                if(e.keyCode === 13){
+                    $("#textoCambiante").text($(this).val()+" !!");
+                    $("#textoCambiante").css("color", "green"); 
+                }
+            });
+
+            $("#bloquear").keydown (function(e){
+                if($(this).val().length>=10 && e.key !== "Backspace" && e.key !== "Delete"){
+                    e.preventDefault();
+                }
+            });
+
+            $("#tipo").keydown (function(e){
+                if(e.key !== "Backspace" && e.key !== "Enter" && e.key !== "Delete" && e.key !== " " && e.key !== "Tab"){
+                    if(isNaN(e.key)){
+                        console.log("LETRA");
+                    } else {
+                        console.log("NUMERO");
+                    }
+                }
+                
+            });
+
+
+            
+
+
+        });
+    </script>
+
+    <!-- CSS -->
+    <style>
+
+    </style>
+</head>
+<body>
+    <input type="text" id="inputEnter" placeholder="Presiona Enter aquí">
+    <p id="textoCambiante">texto</p>
+
+    <input type="text" id="bloquear" placeholder="Solo 10 chars"><br>
+
+    <input type="text" id="tipo" placeholder="Letra o num? Mira consola"><br>
+
+</body>
+</html>
