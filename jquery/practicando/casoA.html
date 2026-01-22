@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+$(document).ready(function() {
+
+    // ==========================================
+    // 1. EVENTOS DE TECLADO
+    // ==========================================
+
+    // 1.- Marca un campo al perder el foco (blur) si está vacío: Pon un borde rojo
+    $('input').blur(function() {
+        if ($(this).val().trim() === "") {
+            $(this).css('border', '2px solid red');
+        } else {
+            $(this).css('border', '1px solid #ccc');
+        }
+    });
+
+    // 2.- Habilitar un botón sólo si un input no está vacío
+    $('input').on('input', function() {
+        // Buscamos el botón más cercano o general
+        if ($(this).val().trim() !== "") {
+            $('button').prop('disabled', false);
+        } else {
+            $('button').prop('disabled', true);
+        }
+    });
+
+    // 3.- Limpia un campo de texto cuando el usuario presiona la tecla "Delete" (Suprimir)
+    $('input').keydown(function(e) {
+        if (e.key === "Delete" || e.keyCode === 46) {
+            $(this).val('');
+        }
+    });
+
+
+    // ==========================================
+    // 2. EVENTOS DE RATÓN
+    // ==========================================
+
+    // 4.- Cuenta cuántas veces se pulsa un botón
+    let contadorClics = 0;
+    $('button').click(function() {
+        contadorClics++;
+        console.log("Cantidad de clics: " + contadorClics);
+    });
+
+    // 5.- Resaltar una fila de una tabla (tr) cuando el ratón pasa por encima
+    $('tr').hover(
+        function() { $(this).css('background-color', '#ffffcc'); }, // Entra
+        function() { $(this).css('background-color', ''); }        // Sale
+    );
+
+    // 6.- Cambia el texto de un botón cuando el ratón entra y lo restaura al salir
+    let textoPrevio;
+    $('button').mouseenter(function() {
+        textoPrevio = $(this).text();
+        $(this).text("¡Mouse dentro!");
+    }).mouseleave(function() {
+        $(this).text(textoPrevio);
+    });
+
+
+    // ==========================================
+    // 3. EVENTOS DE VENTANA
+    // ==========================================
+
+    // 7.- Cambia el fondo de la página según el ancho de la ventana (< 500px azul claro)
+    $(window).resize(function() {
+        if ($(window).width() < 500) {
+            $('body').css('background-color', 'lightblue');
+        } else {
+            $('body').css('background-color', ''); // Restaura al original
+        }
+    });
+
+
+    // ==========================================
+    // 4. MANIPULACIÓN DEL DOM (Tarjeta y Lista)
+    // ==========================================
+
+    // 9.- Ejercicios sobre la estructura <div class="tarjeta">
+    $('.tarjeta h2').text("Título Modificado");           // a) Cambia texto h2
+    $('.tarjeta p').css('color', 'blue');                // b) Cambia color p
+    $('.tarjeta img').attr('src', 'nueva-imagen.jpg');    // c) Cambia src imagen
+    $('.tarjeta').addClass('resaltada');                 // d) Añade clase resaltada
+
+    // 10.- Ejercicios sobre la estructura <ul id="lista">
+    $('#lista').append('<li>Elemento Nuevo al Final</li>');    // a) Añade li al final
+    $('#lista').prepend('<li>Elemento Nuevo al Principio</li>'); // b) Añade li al principio
+    $('#lista li').eq(1).remove();                             // c) Elimina el segundo elemento (índice 1)
+
+});
+</script>
+</html>

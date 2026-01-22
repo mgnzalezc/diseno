@@ -6,17 +6,147 @@
     <title>Document</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-       $(function () {
+       $(document).ready (function(){
+            $("#texto").blur(function(){
+                //si esta vacío
+                if($(this).val().trim() === ""){
+                    $(this).css("border", "2px solid red");
+                    $("#enviar").prop("disabled", true);
+                } 
+                //si tiene algo
+                else {
+                    $(this).css("border", "1px solid grey");
+                    $("#enviar").prop("disabled", false);
+                }
+                
+            });
+
+            $("#texto").keydown (function(e) { 
+                if (e.keyCode === 8) {  //8 EN MAC, 46 EN WINDOWS
+                    $(this).val("");
+                }
+            });
+
+            //CONTAR CLICKS
+            let count = 0;
+            $("#contar").click (function(){
+                count++;
+                $("#cuantas").val(count);
+            });
+
+            //PASAR POR TABLA
+            $("td").mouseenter(function(){
+                $(this).css("background-color", "grey");
+            })
+            $("td").mouseleave(function(){
+                $(this).css("background-color", "white");
+            });
+
+            //CAMBIAR TEXTO
+            $("#contar").mouseenter (function(){
+                $(this).val("cambio");
+            });
+            $("#contar").mouseleave (function(){
+                $(this).val("CONTAR");
+            });
+
+
+            //VENTANA
+            $(window).resize(function(){
+                if($(window).width()<500){
+                    $("body").css("background-color", "lightblue");
+                }else{
+                    $("body").css("background-color", "white");
+                }
+            });
+
+            $(".tarjeta h2").text("Texto nuevo");
+            $(".tarjeta p").css("color", "red"); 
+            //$(".tarjeta").html("<p>Un monton de texto</p>");
+            $("img").attr("src","../../fotos/racoon1.jpg");
+            $("img").css("width","200px");
+            $(".tarjeta").addClass("resaltada");
+
+            let texto = 0;
+
+            $("#final").click(function(){
+                texto++;
+                $("#lista").append("<li>"+texto+"</li>");
+            });
+
+            $("#principio").click(function(){
+                texto++;
+                $("#lista").prepend("<li>"+texto+"</li>");
+            });
             
+            $("#borrarp").click(function(){
+                $("#lista li").first().remove();
+            });
+
+            $("#borrarl").click(function(){
+                $("#lista li:last-child").remove();
+            });
+
+            $("#del2").click(function(){
+                $("#lista :nth-child(2)").remove();
+            });
+
+            $("#add2").click(function(){
+                texto++;
+                $("#lista :nth-child(2)").before("<li>"+texto+"</li>");
+                $("<li>Hola"+texto+"</li>").insertBefore("#lista :last-child");
+            });
+
         });
     </script>
 
-    <!-- unblur borde en rojo -->
     <style>
-
+        table, td{
+            border: 1pt solid black;
+            border-collapse: collapse;
+        }
+        .resaltada{
+            text-align: center;
+        }
     </style>
 </head>
 <body>
     <input type="text" name="" id="texto">
+    <input type="submit" value="ENVIAR" id="enviar" disabled>
+    <input type="submit" value="CONTAR" id="contar">
+    <input type="text" value="" id="cuantas">
+
+    <br><br>
+    <table>
+        <tr>
+            <td>Fila 1</td>
+        </tr>
+        <tr>
+            <td>Fila 2</td>
+        </tr>
+        <tr>
+            <td>Fila 3</td>
+        </tr>
+    </table>
+
+    <div class="tarjeta">
+        <h2>Texto</h2>
+        <p>Lorem ipsum...</p>
+        <img src="">
+    </div>
+
+    <ul id="lista">
+        <li>Uno</li>
+        <li>Dos</li>
+        <li>Tres</li>
+    </ul>
+    <input type="submit" id="borrarp" value="BORRA DEL PRINCIPIO">
+    <input type="submit" id="borrarl" value="BORRA DEL FINAL">
+    <br>
+    <input type="submit" id="principio" value="AÑADE AL PRINCIPIO">
+    <input type="submit" id="final" value="AÑADE AL FINAL">
+    <br>
+    <input type="submit" id="add2" value="AÑADE EL SEGUNDO">
+    <input type="submit" id="del2" value="BORRA EL SEGUNDO">
 </body>
 </html>
