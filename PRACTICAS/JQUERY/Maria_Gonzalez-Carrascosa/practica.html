@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica JQuery</title>
+    <script src="jquery-4.0.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready (function () {
+
+            // CAMBIA EL TEXTO CUANDO PULSES ENTER
+            $("#cambia").keydown (function(e){
+                if(e.key === "Enter"){ //keyCode 13
+                    $(this).val("Texto cambiado");
+                }
+                
+            });
+
+            // BLOQUEA EN 10 CARACTERES
+            $("#bloquear").keydown (function(e){
+                if($(this).val().length>=10 && e.key !== "Backspace" && e.key !== "Delete"){
+                    e.preventDefault();
+                }
+            });
+
+            // PULSA DELETE PARA BORRAR
+            $("#borrar").keydown (function(e) { 
+                if (e.keyCode === 46) { //delete es 46 y backspace es 8
+                    $(this).val("");
+                }
+            });
+
+            // AÑADE ELEMENTOS A UNA LISTA
+            let texto = 3;
+            $("#lista").click(function(){
+                texto++;
+                $(this).append("<li>Elemento "+texto+"</li>");
+            });
+
+            $("#del").click(function(){
+                $("#lista li:last-child").remove();
+            });
+
+            // CAMBIA TEXTO
+            $("#diferentetexto").mouseenter (function(){
+                $(this).val("Carmina");
+            });
+            $("#diferentetexto").mouseleave (function(){
+                $(this).val("Hola");
+            });
+
+            // AVISO VENTANA PEQUEÑA
+            $(window).resize(function(){
+                if($(window).width()<600){
+                    alert("Ventana pequeña!!")
+                }
+            });
+
+            // CONTAR .ITEMS
+            let items = document.querySelectorAll(".item");
+            //$("#claseItem").val(items.length);
+            
+            //esto se hace asi:
+            $("#claseItem").val($(".item").length);
+            
+
+
+
+            //CAMBIAR DOM TARJETA
+            $(".tarjeta h2").text("Mi perra Ronda");
+            $(".tarjeta p").css("color", "darkgreen");
+            $(".tarjeta img").attr("src", "img/DBF75C7D-C119-4E1F-87FE-759B81D09ED9.JPG");
+            $(".tarjeta").addClass("resaltada");
+
+            // CAMBIAR DOM LISTA MENU
+            //$(".activo").css("background-color", "greenyellow"); -->puesto al final para que se aplique tambien en nth-child(1)
+            $("#menu li:last-child").css("color", "darkgreen");
+            $("#menu li:nth-child(1)").addClass("activo");
+            $(".activo").css("background-color", "greenyellow");
+
+
+            
+        });
+    </script>
+    <style>
+        .resaltada{
+            text-align: center;
+            border: "1px solid grey";
+        }
+        .resaltada h2{
+            font-size: medium;
+        }
+        
+    </style>
+</head>
+<body>
+    <p class="item"><b>1. Detectar enter y cambia el texto</b></p>
+    <input type="text" id="cambia" placeholder="Pulsa enter">
+    
+    <p class="item"><b>2. Bloquear escritura en 10 chars</b></p>
+    <input type="text" id="bloquear" placeholder="Máximo 10 caracteres permitidos">
+    
+    <p class="item"><b>3. Pulsar delete para borrar</b></p>
+    <input type="text" id="borrar" placeholder="Delete para borrar">
+    
+    <p class="item"><b>4 y 5. Añadir/borrar elementos a una lista</b></p>
+    <ul id="lista">
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+    <!--<input type="submit" id="add" value="AÑADE ELEMENTO">-->
+    <input type="submit" id="del" value="BORRA ELEMENTO">
+
+    <p class="item"><b>6. Cambiar texto de boton cuando ratón entre</b></p>
+    <input type="submit" id="diferentetexto" value="Hola" style="padding: 3px; margin:5px">
+
+    <p class="item"><b>8. Elementos de clase .item</b></p>
+    <input type="text" id="claseItem" value="Cuantos?">
+
+    <p class="item"><b>9 y 10. Manipular el DOM</b><p>
+    <div class="tarjeta" >
+        <h2>Título</h2>
+        <p>Descripción</p>
+        <img src="img.jpg" alt="imagen" style="width: 200px;">
+    </div>
+
+    <ul id="menu" style="width: 200px;">
+        <li>Inicio</li>
+        <li class="activo">Servicios</li>
+        <li>Contacto</li>
+    </ul>
+
+</body>
+</html>
